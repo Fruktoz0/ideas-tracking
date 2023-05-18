@@ -1,3 +1,11 @@
 <mat-toolbar>
-    <span>Ötletdoboz</span>
+    <div>
+        <span>Ötletdoboz</span>
+    </div>
+    <div>
+        <button mat-button color="primary" routerLink="ideas/new">New Idea</button>
+        <button mat-button *ngIf="isLoggedIn" (click)="logout()"><mat-icon>logout</mat-icon></button>
+        
+    </div>
+
 </mat-toolbar>

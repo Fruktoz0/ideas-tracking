@@ -1,1 +1,18 @@
-<p>list-ideas works!</p>
+<div class="ideas-container">
+    <mat-card class="idea" *ngFor="let idea of ideas">
+        <mat-card-header>
+            <mat-card-title matBadge="{{idea.votes}}">{{idea.name}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-actions class="idea-actions">
+           <app-vote [idea]="idea" (voteUpdate)="listIdeas()" (downUpdate)="listIdeas()"></app-vote>
+            <button mat-button (click)="editIdea(idea)"><mat-icon>edit</mat-icon></button>
+            <button mat-button (click)="deleteIdea(idea)"><mat-icon>delete</mat-icon></button>
+            <div class="view-button">
+                <button mat-button color="accent" (click)="ideaByIdea(idea.id)">Megtekintés</button>
+            </div>
+        </mat-card-actions>
+
+
+    </mat-card>
+</div>

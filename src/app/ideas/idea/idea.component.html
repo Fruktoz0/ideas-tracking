@@ -1,1 +1,13 @@
-<p>idea works!</p>
+<mat-card *ngIf="idea">
+    <mat-card-header>
+        <mat-card-title matBadge="{{idea.votes}}">{{idea.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{idea.description}}</p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+       <app-vote [idea]="idea" (voteUpdate)="listIdeas()" (downUpdate)="listIdeas()"></app-vote>
+        <button mat-button color="accent" (click)="back()">Vissza</button>
+    </mat-card-actions>
+</mat-card>
